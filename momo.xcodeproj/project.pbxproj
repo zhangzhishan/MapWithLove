@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1B8712481CA2B2330014F39D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8712471CA2B2330014F39D /* AppDelegate.swift */; };
-		1B87124A1CA2B2330014F39D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8712491CA2B2330014F39D /* ViewController.swift */; };
 		1B87124D1CA2B2330014F39D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B87124B1CA2B2330014F39D /* Main.storyboard */; };
 		1B87124F1CA2B2330014F39D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B87124E1CA2B2330014F39D /* Assets.xcassets */; };
 		1B8712521CA2B2330014F39D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B8712501CA2B2330014F39D /* LaunchScreen.storyboard */; };
 		1B87125D1CA2B2330014F39D /* momoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B87125C1CA2B2330014F39D /* momoTests.swift */; };
 		1B8712681CA2B2330014F39D /* momoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8712671CA2B2330014F39D /* momoUITests.swift */; };
+		1B8712761CA2B2A60014F39D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8712751CA2B2A60014F39D /* MapViewController.swift */; };
+		1B8712781CA2B4530014F39D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8712771CA2B4530014F39D /* MapKit.framework */; };
+		1B87127A1CA2F7E80014F39D /* bgmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1B8712791CA2F7E80014F39D /* bgmusic.mp3 */; };
+		1B87127C1CA36A8B0014F39D /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B87127B1CA36A8B0014F39D /* ConversionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		1B8712441CA2B2330014F39D /* momo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = momo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B8712471CA2B2330014F39D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B8712491CA2B2330014F39D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1B87124C1CA2B2330014F39D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B87124E1CA2B2330014F39D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B8712511CA2B2330014F39D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,10 @@
 		1B8712631CA2B2330014F39D /* momoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = momoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B8712671CA2B2330014F39D /* momoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = momoUITests.swift; sourceTree = "<group>"; };
 		1B8712691CA2B2330014F39D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B8712751CA2B2A60014F39D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1B8712771CA2B4530014F39D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1B8712791CA2F7E80014F39D /* bgmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bgmusic.mp3; path = Assets.xcassets/bgmusic.dataset/bgmusic.mp3; sourceTree = "<group>"; };
+		1B87127B1CA36A8B0014F39D /* ConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B8712781CA2B4530014F39D /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +84,7 @@
 		1B87123B1CA2B2330014F39D = {
 			isa = PBXGroup;
 			children = (
+				1B8712771CA2B4530014F39D /* MapKit.framework */,
 				1B8712461CA2B2330014F39D /* momo */,
 				1B87125B1CA2B2330014F39D /* momoTests */,
 				1B8712661CA2B2330014F39D /* momoUITests */,
@@ -97,12 +105,14 @@
 		1B8712461CA2B2330014F39D /* momo */ = {
 			isa = PBXGroup;
 			children = (
+				1B8712791CA2F7E80014F39D /* bgmusic.mp3 */,
+				1B87127B1CA36A8B0014F39D /* ConversionViewController.swift */,
 				1B8712471CA2B2330014F39D /* AppDelegate.swift */,
-				1B8712491CA2B2330014F39D /* ViewController.swift */,
 				1B87124B1CA2B2330014F39D /* Main.storyboard */,
 				1B87124E1CA2B2330014F39D /* Assets.xcassets */,
 				1B8712501CA2B2330014F39D /* LaunchScreen.storyboard */,
 				1B8712531CA2B2330014F39D /* Info.plist */,
+				1B8712751CA2B2A60014F39D /* MapViewController.swift */,
 			);
 			path = momo;
 			sourceTree = "<group>";
@@ -235,6 +245,7 @@
 				1B8712521CA2B2330014F39D /* LaunchScreen.storyboard in Resources */,
 				1B87124F1CA2B2330014F39D /* Assets.xcassets in Resources */,
 				1B87124D1CA2B2330014F39D /* Main.storyboard in Resources */,
+				1B87127A1CA2F7E80014F39D /* bgmusic.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +270,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B87124A1CA2B2330014F39D /* ViewController.swift in Sources */,
 				1B8712481CA2B2330014F39D /* AppDelegate.swift in Sources */,
+				1B87127C1CA36A8B0014F39D /* ConversionViewController.swift in Sources */,
+				1B8712761CA2B2A60014F39D /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,25 +1,105 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zew-09-AD8">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--时钟-->
+        <scene sceneID="6Qw-kh-5BT">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2ZW-6K-oFz" customClass="ConversionViewController" customModule="momo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Q6c-E9-naO"/>
+                        <viewControllerLayoutGuide type="bottom" id="K1o-oK-yiM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="vNm-e0-KSM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="来啊来啊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fe3-dy-yyL">
+                                <rect key="frame" x="266" y="35" width="68" height="187"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pVa-qA-acb">
+                                <rect key="frame" x="251" y="285" width="97" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.83397068244324013" blue="0.97421500273470862" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="hkJ-uQ-XdC"/>
+                                    <constraint firstAttribute="height" constant="30" id="y7W-e1-C6I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="fahrenheitFieldEditingChanged:" destination="2ZW-6K-oFz" eventType="editingChanged" id="a5U-UN-ezh"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="fe3-dy-yyL" firstAttribute="centerX" secondItem="vNm-e0-KSM" secondAttribute="centerX" id="5JM-Ra-yih"/>
+                            <constraint firstItem="pVa-qA-acb" firstAttribute="top" secondItem="fe3-dy-yyL" secondAttribute="bottom" constant="63" id="8q6-lZ-ffw"/>
+                            <constraint firstItem="fe3-dy-yyL" firstAttribute="top" secondItem="Q6c-E9-naO" secondAttribute="bottom" constant="15" id="HY5-1y-xLh"/>
+                            <constraint firstItem="pVa-qA-acb" firstAttribute="centerX" secondItem="vNm-e0-KSM" secondAttribute="centerX" id="QDY-bE-FLy"/>
+                            <constraint firstItem="pVa-qA-acb" firstAttribute="centerY" secondItem="vNm-e0-KSM" secondAttribute="centerY" id="vsd-kC-t0n"/>
+                            <constraint firstItem="fe3-dy-yyL" firstAttribute="centerX" secondItem="vNm-e0-KSM" secondAttribute="centerX" id="wVo-Iw-ToH"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="PVU-ya-4Bf" appends="YES" id="iE4-un-wyM"/>
+                        </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="时钟" image="cloud" id="OgR-2t-WED"/>
+                    <connections>
+                        <outlet property="celsiusLabel" destination="fe3-dy-yyL" id="l1G-2y-Phq"/>
+                        <outlet property="textField" destination="pVa-qA-acb" id="Vwz-Ll-f8b"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hv3-5Y-I6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="PVU-ya-4Bf">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="2ZW-6K-oFz" id="XDE-fz-S9P"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1093" y="-226"/>
+        </scene>
+        <!--乌云-->
+        <scene sceneID="GAS-Tb-taJ">
+            <objects>
+                <viewController id="qJa-rS-RWK" customClass="MapViewController" customModule="momo" customModuleProvider="target" sceneMemberID="viewController">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="HaJ-g5-DU1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </mapView>
+                    <tabBarItem key="tabBarItem" title="乌云" image="cloud" id="TbL-CF-FuE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SyY-5p-N9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="325" y="506"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="gIU-Rx-CeF">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Zew-09-AD8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Iwz-T2-zOD">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="qJa-rS-RWK" kind="relationship" relationship="viewControllers" id="BXI-9w-pPW"/>
+                        <segue destination="2ZW-6K-oFz" kind="relationship" relationship="viewControllers" id="jSQ-eQ-bE2"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAu-io-bSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="325" y="-290"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cloud" width="30" height="30"/>
+    </resources>
 </document>
